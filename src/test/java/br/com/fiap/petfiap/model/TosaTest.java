@@ -30,4 +30,13 @@ public class TosaTest {
         // Assert
         assertEquals(70.0, preco, 0.001);
     }
+
+    @Test
+    public void deveDurar60Minutos() {
+        // Act
+        int duracao = tosaDoRex().getDuracaoMinutos();
+
+        // Assert
+        assertEquals(60, duracao);
+    }
 }

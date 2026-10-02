@@ -30,4 +30,13 @@ public class BanhoTest {
         // Assert
         assertEquals(45, duracao);
     }
+
+    @Test
+    public void deveCustar60ReaisParaPortePequeno() {
+        // Act
+        double preco = banhoDoRex().calcularPreco();
+
+        // Assert
+        assertEquals(60.0, preco, 0.001);
+    }
 }

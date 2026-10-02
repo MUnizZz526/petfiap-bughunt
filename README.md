@@ -1,6 +1,5 @@
 # Checkpoint 5 — Bug Hunt PetFiap
 
-> Repositório oficial de entrega do Checkpoint 5 da disciplina de Programação Orientada a Objetos (FIAP).
 
 ## Identificação
 
@@ -8,12 +7,12 @@
 
 | Integrante | RM | Turma |
 |---|---|---|
-| Integrante 1 | RM00000 | 2TDSPX |
-| Integrante 2 | RM00000 | 2TDSPX |
-| Integrante 3 | RM00000 | 2TDSPX |
-| Integrante 4 | RM00000 | 2TDSPX |
+| Cauã Muniz | RM566527 | 2CCPH |
+| Matheus Morelli | RM562765 | 2CCPH |
+| Victor Mortari | RM564804 | 2CCPH |
+| Henrique Mortari | RM564699 | 2CCPH |
+|Rafael Ferreira | RM563285 | 2CCPH |
 
-*(Nota: substitua os nomes, RMs e turma acima pelos dados oficiais dos membros do seu grupo)*
 
 | Campo | |
 |---|---|
@@ -26,9 +25,6 @@
 
 ## Parte 1 — Bugs encontrados
 
-> Uma linha por bug, na ordem em que foram identificados e corrigidos, correspondendo aos commits semânticos (`fix: bug01 ...` a `fix: bug12 ...`).
-
-| # | Sintoma observado (o que fiz/vi) | Causa raiz (arquivo e linha aproximada) | Correção aplicada | Conceito da disciplina |
 |---|---|---|---|---|
 | bug01 | `GeradorProtocoloTest.deveManterUmaUnicaInstancia` e `deveGerarProtocolosSequenciais` falhavam: criava novas instâncias e o contador reiniciava em 1 | `GeradorProtocolo.java:18-20` — método `getInstancia()` retornava `new GeradorProtocolo()` sem salvar na variável estática `instancia` | Atribuir `instancia = new GeradorProtocolo()` antes de retornar a variável estática | Padrão Singleton e membros estáticos (Aula 14) |
 | bug02 | `AtendimentoBuilderTest.deveMontarAtendimentoCompleto` falhava com `expected: <Rex> but was: <null>` | `AtendimentoBuilder.java:24` — no método `comPet`, a variável `petNome = petNome` sofria sombreamento de escopo sem o prefixo `this.` | Corrigir a atribuição para `this.petNome = petNome;` | Escopo de variáveis, sombreamento (shadowing) e operador `this` (Aula 2/3) |
@@ -107,9 +103,3 @@ Em um cenário corporativo real com restrição de prazo, a busca obstinada por 
 
 ---
 
-## Parte 5 — Espaço livre (opcional)
-
-O checkpoint proporcionou uma excelente experiência prática de engenharia de software e code review. O exercício destacou com muita clareza a importância de:
-1. Escrever testes unitários limpos e determinísticos segundo o padrão AAA;
-2. Conhecer a fundo a semântica da linguagem Java (`==` vs `.equals()`, shadowing, sobrecarga acidental);
-3. Utilizar boas práticas de arquitetura (Injeção de dependência por construtor, remoção de dead code e separação de responsabilidades com Builder, Factory e Singleton).

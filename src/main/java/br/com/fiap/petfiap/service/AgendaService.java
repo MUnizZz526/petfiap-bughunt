@@ -30,10 +30,7 @@ public class AgendaService {
                         "Pet " + novo.getPetNome() + " ja possui atendimento agendado nesse horario");
             }
         }
-        Atendimento salvo = repository.save(novo);
-        System.out.println("Recibo: atendimento " + salvo.getProtocolo()
-                + " agendado para " + salvo.getPetNome() + " (tutor " + salvo.getTutorNome() + ")");
-        return salvo;
+        return repository.save(novo);
     }
 
     // Busca pelo id; nunca retorna null, o orElseThrow garante a excecao.
